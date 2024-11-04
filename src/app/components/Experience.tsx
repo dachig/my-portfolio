@@ -1,3 +1,5 @@
+import { MdVerified } from "react-icons/md";
+
 export default function Experience() {
   return (
     <div
@@ -10,36 +12,64 @@ export default function Experience() {
       </div>
       <div className="flex gap-4">
         <div className="border-2 py-4 px-16 rounded-xl">
-          <h3 className="text-center">Frontend development</h3>
-          <div className="flex justify-between">
+          <h3 className="text-center font-bold">Frontend Development</h3>
+          <div className="flex justify-between gap-4 mt-4 text-sm">
             <ul>
-              <li>html</li>
-              <li>css</li>
-              <li>js</li>
-              <li>ts</li>
+              <li className="flex items-center gap-1">
+                <MdVerified />
+                HTML
+              </li>
+              <li className="flex items-center gap-1">
+                <MdVerified />
+                CSS
+              </li>
+              <li className="flex items-center gap-1">
+                <MdVerified />
+                JavaScript
+              </li>
+              <li className="flex items-center gap-1">
+                <MdVerified />
+                TypeScript
+              </li>
             </ul>
             <ul>
-              <li>react</li>
-              <li>vue</li>
-              <li>cdc</li>
-              <li>cdaedce</li>
+              <li className="flex items-center gap-1">
+                <MdVerified />
+                React
+              </li>
+              <li className="flex items-center gap-1">
+                <MdVerified />
+                NextJS
+              </li>
+              <li className="flex items-center gap-1">
+                <MdVerified />
+                Remix
+              </li>
+              <li className="flex items-center gap-1">
+                <MdVerified />
+                Tailwind
+              </li>
             </ul>
           </div>
         </div>
         <div className="border-2 py-4 px-16 rounded-xl">
-          <h3 className="text-center">Frontend development</h3>
-          <div className="flex justify-between">
+          <h3 className="text-center font-bold">Backend Development</h3>
+          <div className="flex justify-between mt-4 gap-4 text-sm">
             <ul>
-              <li>html</li>
-              <li>css</li>
-              <li>js</li>
-              <li>ts</li>
+              <li className="flex items-center gap-1">
+                <MdVerified />
+                MongoDB
+              </li>
+              <li className="flex items-center gap-1">
+                <MdVerified />
+                PostgreSQL
+              </li>
             </ul>
             <ul>
-              <li>react</li>
-              <li>vue</li>
-              <li>cdc</li>
-              <li>cdaedce</li>
+              <li className="flex items-center gap-1">
+                <MdVerified />
+                C#
+              </li>
             </ul>
           </div>
         </div>

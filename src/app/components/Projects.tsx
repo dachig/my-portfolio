@@ -54,10 +54,10 @@ function SoloProjects() {
   return (
     <div className="flex gap-4">
       {soloProjects.map((project, index) => (
-        <div key={index} className="border-2 p-4 rounded-xl">
+        <div key={index} className="border-2 p-4 rounded-xl flex flex-col">
           <h3 className="font-bold">{project.title}</h3>
           <p className="text-gray-400">{project.description}</p>
-          <Image height={400} src={project.thumbnail} alt="thumbnail project" />
+          <Image height={400} src={project.thumbnail} alt="thumbnail project" className="mt-auto"/>
           <div className="flex gap-4 mt-2">
             <Link href={project.linkRepo} target="_blank" className="hover:text-blue-600">
               Repository
@@ -76,7 +76,7 @@ function TeamProjects() {
   return (
     <div className="flex gap-4">
       {teamProjects.map((project, index) => (
-        <div key={index} className="border-2 p-4 rounded-xl">
+        <div key={index} className="border-2 p-4 rounded-xl w-1/2">
           <div className="flex">
             <h3 className="font-bold">{project.who}</h3>
             <p className="ml-auto text-gray-400 dark:bg-gray-800 bg-gray-100 px-1 rounded-lg">

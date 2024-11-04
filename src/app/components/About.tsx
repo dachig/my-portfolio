@@ -21,7 +21,7 @@ export default function About() {
               <p className="text-sm">Graduate programming</p>
             </div>
           </div>
-          <p>
+          <p className="px-4">
             In addition to my passion for programming, I thrive on physical
             challenges that engage both my body and mind. I enjoy boxing, where
             precision and strategy blend seamlessly with physical strength.
