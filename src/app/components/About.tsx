@@ -1,43 +1,37 @@
+import CollageHobbies from "@/app/lib/collage_hobbies.png";
+import Image from "next/image";
 export default function About() {
   return (
     <div
       id="about"
-      className="h-screen flex flex-col justify-center items-center"
+      className="h-screen flex flex-col justify-center items-center gap-4"
     >
-      <p className="text-indigo-300">Get to know more</p>
-      <h2 className="text-2xl font-bold text-indigo-600">About Me</h2>
-      <div className="flex gap-4">
-        <div className="border-2 w-1/2"></div>
-        <div className="w-1/2">
+      <div className="text-center">
+        <p className="text-gray-400 text-sm">Get to know more</p>
+        <h2 className="text-2xl font-bold">About Me</h2>
+      </div>
+        <div className="flex flex-col gap-4">
           <div className="flex gap-4">
-            <div className="border-2 rounded-xl p-4">
-              <h3>Experience</h3>
-              <p>2+ years in frontend development</p>
+            <div className="border-2 rounded-xl p-4 w-1/2">
+              <h3 className="font-bold">Experience</h3>
+              <p className="text-sm">2+ years in frontend development</p>
             </div>
-            <div className="border-2 rounded-xl p-4">
-              <h3>Education</h3>
-              <p>Graduate programming</p>
+            <div className="border-2 rounded-xl p-4 w-1/2">
+              <h3 className="font-bold">Education</h3>
+              <p className="text-sm">Graduate programming</p>
             </div>
           </div>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam
-            provident perferendis debitis fugit accusantium ut error assumenda
-            voluptatum dicta possimus, voluptate sunt rem sint mollitia
-            exercitationem vitae vero. Voluptate, modi? Aliquid possimus ipsam
-            sit culpa rerum labore voluptatem esse dignissimos voluptas neque,
-            tenetur laudantium placeat velit aliquam accusamus assumenda autem
-            dolorem ab maiores. Numquam maxime eaque eius assumenda enim nobis?
-            Fuga odio iure nesciunt culpa magni voluptatibus sed impedit nisi
-            quidem quis! Fugiat in adipisci deserunt officia distinctio saepe.
-            Minus voluptatem, illum ducimus quaerat quae reprehenderit fugit
-            officia fugiat esse. Totam explicabo dolores alias impedit assumenda
-            eligendi dolore ipsam sunt, optio quod ad, corrupti repellat facilis
-            neque necessitatibus? Delectus, laboriosam eius corporis architecto
-            ipsa eum repudiandae fugit nisi illum esse? quasi ea soluta tenetur
-            recusandae vitae ipsa adipisci debitis voluptatum!
+            In addition to my passion for programming, I thrive on physical
+            challenges that engage both my body and mind. I enjoy boxing, where
+            precision and strategy blend seamlessly with physical strength.
+            Calisthenics allows me to push my limits and develop body control.
+            Hiking offers a chance to explore nature while boosting my
+            endurance, and bouldering sharpens my problem-solving skills as I
+            navigate climbing routes. These activities not only keep me fit but
+            also enhance my mental resilience.
           </p>
         </div>
-      </div>
     </div>
   );
 }

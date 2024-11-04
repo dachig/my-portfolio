@@ -3,6 +3,7 @@ import CryptoHippo from "@/app/lib/crypto-hippo-screen.png";
 import GithubAPI from "@/app/lib/github-api-screen.png";
 import Image from "next/image";
 import Link from "next/link";
+import { RiExternalLinkLine } from "react-icons/ri";
 
 import { useState } from "react";
 
@@ -54,14 +55,14 @@ function SoloProjects() {
     <div className="flex gap-4">
       {soloProjects.map((project, index) => (
         <div key={index} className="border-2 p-4 rounded-xl">
-          <h3>{project.title}</h3>
-          <p>{project.description}</p>
+          <h3 className="font-bold">{project.title}</h3>
+          <p className="text-gray-400">{project.description}</p>
           <Image height={400} src={project.thumbnail} alt="thumbnail project" />
-          <div className="flex gap-4">
-            <Link href={project.linkRepo} target="_blank">
+          <div className="flex gap-4 mt-2">
+            <Link href={project.linkRepo} target="_blank" className="hover:text-blue-600">
               Repository
             </Link>
-            <Link href={project.linkDemo} target="_blank">
+            <Link href={project.linkDemo} target="_blank" className="hover:text-blue-600">
               Live Demo
             </Link>
           </div>
@@ -77,19 +78,25 @@ function TeamProjects() {
       {teamProjects.map((project, index) => (
         <div key={index} className="border-2 p-4 rounded-xl">
           <div className="flex">
-            <h3>{project.who}</h3>
-            <p className="ml-auto">{project.period}</p>
+            <h3 className="font-bold">{project.who}</h3>
+            <p className="ml-auto text-gray-400 dark:bg-gray-800 bg-gray-100 px-1 rounded-lg">
+              {project.period}
+            </p>
           </div>
-          <h4>{project.function}</h4>
+          <h4 className="text-gray-400">{project.function}</h4>
           <br />
           {project.description.map((paragraph, index) => (
-            <p key={index} className="mb-4">
+            <p key={index} className="mb-4 text-gray-800 dark:text-white">
               {paragraph}
             </p>
           ))}
           {project.link && (
-            <Link href={project.link} target="_blank">
-              Link to blog
+            <Link
+              href={project.link}
+              target="_blank"
+              className="flex items-center gap-[3px] font-medium text-blue-600"
+            >
+              Blog <RiExternalLinkLine />
             </Link>
           )}
         </div>
@@ -103,13 +110,29 @@ export default function Projects() {
   return (
     <div
       id="projects"
-      className="h-screen flex flex-col justify-center items-center"
+      className="h-screen flex flex-col justify-center items-center gap-4"
     >
-      <p>Explore my</p>
-      <h2>Projects</h2>
-      <div className="flex gap-4">
-        <button onClick={() => setProjectSwitch("solo")}>Solo Projects</button>
-        <button onClick={() => setProjectSwitch("team")}>Team Projects</button>
+      <div className="text-center">
+        <p className="text-gray-400 text-sm">Take a look at my</p>
+        <h2 className="text-2xl font-bold">Projects</h2>
+      </div>
+      <div className="flex gap-4 mr-auto">
+        <button
+          className={
+            projectSwitch == "solo" ? "font-bold border-b-2" : "text-gray-400"
+          }
+          onClick={() => setProjectSwitch("solo")}
+        >
+          Solo Projects
+        </button>
+        <button
+          className={
+            projectSwitch == "team" ? "font-bold border-b-2" : "text-gray-400"
+          }
+          onClick={() => setProjectSwitch("team")}
+        >
+          Team Projects
+        </button>
       </div>
       {projectSwitch == "solo" ? <SoloProjects /> : <TeamProjects />}
     </div>
