@@ -1,11 +1,11 @@
 "use client";
-import CryptoHippo from "@/app/lib/crypto-hippo-screen.png";
-import GithubAPI from "@/app/lib/github-api-screen.png";
+import CryptoHippo from "../../../public/crypto-hippo-screen.png";
+import GithubAPI from "../../../public/github-api-screen.png";
 import Image from "next/image";
 import Link from "next/link";
 import { RiExternalLinkLine } from "react-icons/ri";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const soloProjects = [
   {
@@ -54,15 +54,32 @@ function SoloProjects() {
   return (
     <div className="flex gap-4">
       {soloProjects.map((project, index) => (
-        <div key={index} className="border-2 p-4 rounded-xl flex flex-col">
+        <div
+          id={`solo-project-${index}`}
+          key={index}
+          className="border-2 p-4 rounded-xl flex flex-col"
+        >
           <h3 className="font-bold">{project.title}</h3>
           <p className="text-gray-400">{project.description}</p>
-          <Image height={400} src={project.thumbnail} alt="thumbnail project" className="mt-auto"/>
+          <Image
+            height={400}
+            src={project.thumbnail}
+            alt="thumbnail project"
+            className="mt-auto"
+          />
           <div className="flex gap-4 mt-2">
-            <Link href={project.linkRepo} target="_blank" className="hover:text-blue-600">
+            <Link
+              href={project.linkRepo}
+              target="_blank"
+              className="hover:text-blue-600"
+            >
               Repository
             </Link>
-            <Link href={project.linkDemo} target="_blank" className="hover:text-blue-600">
+            <Link
+              href={project.linkDemo}
+              target="_blank"
+              className="hover:text-blue-600"
+            >
               Live Demo
             </Link>
           </div>
@@ -76,17 +93,21 @@ function TeamProjects() {
   return (
     <div className="flex gap-4">
       {teamProjects.map((project, index) => (
-        <div key={index} className="border-2 p-4 rounded-xl w-1/2">
+        <div
+          id={`team-project-${index}`}
+          key={index}
+          className="border-2 p-4 rounded-xl w-1/2"
+        >
           <div className="flex">
             <h3 className="font-bold">{project.who}</h3>
-            <p className="ml-auto text-gray-400 dark:bg-gray-800 bg-gray-100 px-1 rounded-lg">
+            <p className="ml-auto text-gray-800 bg-white px-1 rounded-lg">
               {project.period}
             </p>
           </div>
           <h4 className="text-gray-400">{project.function}</h4>
           <br />
           {project.description.map((paragraph, index) => (
-            <p key={index} className="mb-4 text-gray-800 dark:text-white">
+            <p key={index} className="mb-4">
               {paragraph}
             </p>
           ))}
@@ -107,10 +128,27 @@ function TeamProjects() {
 
 export default function Projects() {
   const [projectSwitch, setProjectSwitch] = useState("team");
+
+  function handleSwitch(from: string, to: string) {
+    const element1 = document.getElementById(from + "-projects");
+    if (to == "solo") element1?.classList.add("slide-left");
+    else element1?.classList.add("slide-right");
+
+    setTimeout(() => {
+      setProjectSwitch(to);
+      const element1 = document.getElementById(to + "-project-0");
+      const element2 = document.getElementById(to + "-project-1");
+      element1?.classList.remove("hidden");
+      element2?.classList.remove("hidden");
+      element1?.classList.add("fade-in-bounce");
+      element2?.classList.add("fade-in-bounce");
+    }, 500);
+  }
+
   return (
     <div
       id="projects"
-      className="h-screen flex flex-col justify-center items-center gap-4"
+      className="h-screen flex flex-col justify-center items-center gap-4 overflow-hidden"
     >
       <div className="text-center">
         <p className="text-gray-400 text-sm">Take a look at my</p>
@@ -121,7 +159,7 @@ export default function Projects() {
           className={
             projectSwitch == "solo" ? "font-bold border-b-2" : "text-gray-400"
           }
-          onClick={() => setProjectSwitch("solo")}
+          onClick={() => handleSwitch("team", "solo")}
         >
           Solo Projects
         </button>
@@ -129,12 +167,23 @@ export default function Projects() {
           className={
             projectSwitch == "team" ? "font-bold border-b-2" : "text-gray-400"
           }
-          onClick={() => setProjectSwitch("team")}
+          onClick={() => handleSwitch("solo", "team")}
         >
           Team Projects
         </button>
       </div>
-      {projectSwitch == "solo" ? <SoloProjects /> : <TeamProjects />}
+      <div
+        className={projectSwitch === "solo" ? "" : "hidden"}
+        id="solo-projects"
+      >
+        <SoloProjects />
+      </div>
+      <div
+        className={projectSwitch === "team" ? "" : "hidden"}
+        id="team-projects"
+      >
+        <TeamProjects />
+      </div>{" "}
     </div>
   );
 }

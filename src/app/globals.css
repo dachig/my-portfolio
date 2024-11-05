@@ -3,17 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-   --active-color: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --active-color: #ffffff;
-  }
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --active-color: #ffffff;
 }
 
 body {
@@ -29,6 +21,121 @@ html {
   scroll-behavior: smooth;
 }
 nav ul li a.active {
-  color:  var(--active-color); /* Indigo color or any color you prefer */
+  color: var(--active-color); /* Indigo color or any color you prefer */
   font-weight: bold;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hiddenn {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.animate {
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes bounce {
+  0%
+ {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-10px); /* Bounce up 10px */
+  }
+  15% {
+    transform: translateY(5px); /* Drop slightly below the ground */
+  }
+  20% {
+    transform: translateY(-2px); /* Bounce back up slightly */
+  }
+  25% {
+    transform: translateY(0); /* Settle back down before pause */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Each animation will now have a pause */
+.bounce1 {
+  animation: bounce 4s ease forwards; /* Wait for 1s after completing the bounce */
+  animation-delay: 2.5s;
+  animation-iteration-count: infinite; /* Infinite iterations */
+}
+
+.bounce2 {
+  animation: bounce 4s ease forwards;/* Wait for 1s after completing the bounce */
+  animation-delay: 5s; /* Wait 2.5s before starting */
+  animation-iteration-count: infinite;
+}
+
+.bounce3 {
+  animation: bounce 4s ease forwards; /* Wait for 1s after completing the bounce */
+  animation-delay: 7.5s; /* Wait 5.5s before starting */
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes slide-out-left {
+  0% {
+    transform: translateX(0); /* Start at original position */
+    opacity: 1; /* Fully visible */
+  }
+  100% {
+    transform: translateX(-100%); /* Move to the left by its width */
+    opacity: 0; /* Completely transparent */
+  }
+}
+
+@keyframes slide-out-right {
+  0% {
+    transform: translateX(0); /* Start at original position */
+    opacity: 1; /* Fully visible */
+  }
+  100% {
+    transform: translateX(100%); /* Move to the right by its width */
+    opacity: 0; /* Completely transparent */
+  }
+}
+
+.slide-left {
+  animation: slide-out-left 0.5s ease forwards; /* Animation for sliding left */
+}
+
+.slide-right {
+  animation: slide-out-right 0.5s ease forwards; /* Animation for sliding right */
+}
+
+@keyframes fadeInBounce {
+  0% {
+    opacity: 0;               /* Start invisible */
+    transform: translateY(0); /* Start at original position */
+  }
+  50% {
+    opacity: 1;               /* Fully visible */
+    transform: translateY(-30px); /* Move up by 30px */
+  }
+  70% {
+    transform: translateY(5px);  /* Go slightly below the starting point */
+  }
+  90% {
+    transform: translateY(-3px); /* Bounce up slightly */
+  }
+  100% {
+    transform: translateY(0);  /* Back to original position */
+  }
+}
+
+.fade-in-bounce {
+  animation: fadeInBounce 0.5s ease forwards; /* Set duration and easing */
 }
