@@ -1,34 +1,12 @@
 "use client";
-import CollageHobbies from "@/app/lib/collage_hobbies.png";
-import Image from "next/image";
 import { useEffect, useRef } from "react";
+import {animateOnScroll} from "../lib/animate-on-scroll"
 
 export default function About() {
   const aboutRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (aboutRef.current) {
-      const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate");
-            entry.target.classList.remove("hiddenn");
-          } else {
-            entry.target.classList.remove("animate");
-            entry.target.classList.add("hiddenn");
-          }
-        });
-      };
-
-      const observer = new IntersectionObserver(handleIntersection, {
-        threshold: 0.1,
-      });
-
-      observer.observe(aboutRef.current);
-
-      // Clean up the observer on component unmount
-      return () => observer.disconnect();
-    }
+    animateOnScroll(aboutRef);
   }, []);
 
   return (
@@ -37,6 +15,7 @@ export default function About() {
       id="about"
       className="hiddenn h-screen flex flex-col justify-center items-center gap-4"
     >
+      
       <div className="text-center">
         <p className="text-gray-400 text-sm">Get to know more</p>
         <h2 className="text-2xl font-bold">About Me</h2>

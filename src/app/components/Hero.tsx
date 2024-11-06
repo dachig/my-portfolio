@@ -1,13 +1,22 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import AiAvatar from "../../../public/ai-avatar.jpg";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { TbFileCv } from "react-icons/tb";
 import { HeroHighlight, Highlight } from "../components/ui/hero-highlight";
+import { useEffect, useRef } from "react";
+import { animateOnScroll } from "../lib/animate-on-scroll";
 
 export default function Hero() {
+  const heroRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    animateOnScroll(heroRef);
+  }, []);
+
   return (
-    <div className="h-screen flex justify-center items-center gap-16">
+    <div ref={heroRef} className="flex flex-col md:flex-row justify-center items-center gap-16 hiddenn">
       <Image
         className="rounded-full"
         src={AiAvatar}

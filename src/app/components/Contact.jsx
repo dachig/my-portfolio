@@ -1,9 +1,10 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { FaCheck } from "react-icons/fa";
+import ClipLoader from "react-spinners/ClipLoader";
 
-export const ContactForm = () => {
+export function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -55,15 +56,17 @@ export const ContactForm = () => {
       id="contact"
       className="h-screen flex flex-col justify-center items-center"
     >
+      <p className="text-gray-400 text-sm">Let's make</p>
+      <h2 className="text-2xl font-bold">Contact</h2>
       <form
-        className="flex w-full flex-col gap-4 text-gray-700 dark:text-white"
+        className="flex w-full flex-col gap-4 mt-4"
         ref={form}
         onSubmit={sendEmail}
       >
         <div className="flex flex-col">
           <label>Name *</label>
           <input
-            className="bg-transparent border-2 border-purple-300 dark:border-purple-500 p-2 rounded-lg"
+            className="bg-transparent border-2 p-2 rounded-xl"
             type="text"
             name="from_name"
             onChange={(e) => setName(e.target.value)}
@@ -83,7 +86,7 @@ export const ContactForm = () => {
         <div className="flex flex-col">
           <label>Email *</label>
           <input
-            className="bg-transparent border-2 border-purple-300 dark:border-purple-500 p-2 rounded-lg"
+            className="bg-transparent border-2 p-2 rounded-xl"
             type="email"
             name="from_email"
             onChange={(e) => setEmail(e.target.value)}
@@ -98,7 +101,7 @@ export const ContactForm = () => {
         <div className="flex flex-col">
           <label>Message *</label>
           <textarea
-            className="bg-transparent border-2 border-purple-300 dark:border-purple-500 p-2 rounded-lg"
+            className="bg-transparent border-2 p-2 rounded-xl"
             name="message"
             onChange={(e) => setMessage(e.target.value)}
             value={message}
@@ -109,14 +112,21 @@ export const ContactForm = () => {
             </p>
           )}
         </div>
-        <button>
+        <button className="bg-blue-500 w-max mx-auto px-3 py-1 rounded-xl hover:bg-blue-400">
           {loading ? (
-            "Loading..."
+            <ClipLoader
+              className="mt-1"
+              color="white"
+              loading={loading}
+              size={15}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
           ) : sent ? (
-            <>
+            <div className="flex items-center">
               <span className="mr-2">Sent</span>
               <FaCheck />
-            </>
+            </div>
           ) : (
             "Send"
           )}
@@ -124,4 +134,4 @@ export const ContactForm = () => {
       </form>
     </div>
   );
-};
+}

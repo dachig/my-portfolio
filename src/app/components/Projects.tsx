@@ -5,7 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { RiExternalLinkLine } from "react-icons/ri";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { animateOnScroll } from "../lib/animate-on-scroll";
 
 const soloProjects = [
   {
@@ -100,7 +101,7 @@ function TeamProjects() {
         >
           <div className="flex">
             <h3 className="font-bold">{project.who}</h3>
-            <p className="ml-auto text-gray-800 bg-white px-1 rounded-lg">
+            <p className="ml-auto text-gray-800 bg-white px-2 rounded-lg">
               {project.period}
             </p>
           </div>
@@ -128,7 +129,11 @@ function TeamProjects() {
 
 export default function Projects() {
   const [projectSwitch, setProjectSwitch] = useState("team");
+  const projectsRef = useRef<HTMLDivElement | null>(null);
 
+  useEffect(() => {
+    animateOnScroll(projectsRef);
+  }, []);
   function handleSwitch(from: string, to: string) {
     const element1 = document.getElementById(from + "-projects");
     if (to == "solo") element1?.classList.add("slide-left");
@@ -147,6 +152,7 @@ export default function Projects() {
 
   return (
     <div
+      ref={projectsRef}
       id="projects"
       className="h-screen flex flex-col justify-center items-center gap-4 overflow-hidden"
     >

@@ -27,8 +27,8 @@ export default function Header() {
     return () => observer.disconnect();
   }, []);
   return (
-    <nav className="items-center justify-evenly flex text-gray-400 font-bold fixed right-16 top-16">
-      <ul className="flex flex-col border-t-4 border-r-4 p-2">
+    <nav className="items-center justify-evenly flex text-gray-400 font-bold fixed right-16 top-16 z-50">
+      <ul className="flex flex-col border-t-4 border-t-indigo-600 border-r-blue-400 border-r-4 p-2">
         <li>
           <a href="#about" className="flex gap-2 items-center">
             About

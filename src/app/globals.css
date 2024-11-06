@@ -37,16 +37,15 @@ nav ul li a.active {
 
 .hiddenn {
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.5s;
 }
 
 .animate {
-  animation: fadeIn 1s forwards;
+  animation: fadeIn 2.5s forwards;
 }
 
 @keyframes bounce {
-  0%
- {
+  0% {
     transform: translateY(0);
   }
   10% {
@@ -74,7 +73,7 @@ nav ul li a.active {
 }
 
 .bounce2 {
-  animation: bounce 4s ease forwards;/* Wait for 1s after completing the bounce */
+  animation: bounce 4s ease forwards; /* Wait for 1s after completing the bounce */
   animation-delay: 5s; /* Wait 2.5s before starting */
   animation-iteration-count: infinite;
 }
@@ -84,7 +83,6 @@ nav ul li a.active {
   animation-delay: 7.5s; /* Wait 5.5s before starting */
   animation-iteration-count: infinite;
 }
-
 
 @keyframes slide-out-left {
   0% {
@@ -118,21 +116,21 @@ nav ul li a.active {
 
 @keyframes fadeInBounce {
   0% {
-    opacity: 0;               /* Start invisible */
+    opacity: 0; /* Start invisible */
     transform: translateY(0); /* Start at original position */
   }
   50% {
-    opacity: 1;               /* Fully visible */
+    opacity: 1; /* Fully visible */
     transform: translateY(-30px); /* Move up by 30px */
   }
   70% {
-    transform: translateY(5px);  /* Go slightly below the starting point */
+    transform: translateY(5px); /* Go slightly below the starting point */
   }
   90% {
     transform: translateY(-3px); /* Bounce up slightly */
   }
   100% {
-    transform: translateY(0);  /* Back to original position */
+    transform: translateY(0); /* Back to original position */
   }
 }
 

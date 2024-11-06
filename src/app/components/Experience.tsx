@@ -1,8 +1,18 @@
+"use client";
+import { useEffect, useRef } from "react";
 import { MdVerified } from "react-icons/md";
+import { animateOnScroll } from "../lib/animate-on-scroll";
 
 export default function Experience() {
+  const experienceRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    animateOnScroll(experienceRef);
+  }, []);
+
   return (
     <div
+      ref={experienceRef}
       id="experience"
       className="h-screen flex flex-col justify-center items-center gap-4"
     >
