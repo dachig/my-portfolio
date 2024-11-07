@@ -7,20 +7,25 @@ import Projects from "./components/Projects";
 import { ContactForm } from "./components/Contact";
 
 import { LampContainer } from "./components/ui/lamp";
+import { Fragment } from "react";
+import MobileHero from "./components/MobileHero";
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <LampContainer className="">
-        <Hero />
-      </LampContainer>
-      <main className="max-w-3xl mx-auto">
-        <About />
-        <Experience />
-        <Projects />
-        <ContactForm />
-      </main>
-    </>
+    <Fragment>
+      <MobileHero/>
+      <div className="hidden md:block">
+        <Header />
+        <LampContainer className="">
+          <Hero />
+        </LampContainer>
+        <main className="max-w-3xl mx-auto">
+          <About />
+          <Experience />
+          <Projects />
+          <ContactForm />
+        </main>
+      </div>
+    </Fragment>
   );
 }
