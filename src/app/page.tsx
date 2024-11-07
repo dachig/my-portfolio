@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <Fragment>
       <MobileHero/>
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <Header />
         <LampContainer className="">
           <Hero />

@@ -12,7 +12,7 @@ export default function MobileHero() {
   return (
     <div
       ref={mobileHeroRef}
-      className="h-screen relative w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md md:hidden hiddenn"
+      className="h-screen relative w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md lg:hidden hiddenn"
     >
       <div className="w-full absolute inset-0 h-screen">
         <SparklesCore
@@ -25,8 +25,8 @@ export default function MobileHero() {
           particleColor="#FFFFFF"
         />
       </div>
-      <h2 className="text-2xl font-bold">Welcome to my portfolio!</h2>
-      <p className="text-sm">
+      <h2 className="text-2xl font-bold px-2">Welcome to my portfolio!</h2>
+      <p className="text-sm text-center px-2">
         I strongly recommend checking this website out on a desktop device.
       </p>
     </div>
