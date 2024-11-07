@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { FaCheck } from "react-icons/fa";
 import ClipLoader from "react-spinners/ClipLoader";
+import clsx from "clsx";
 
 export function ContactForm() {
   const [name, setName] = useState("");
@@ -112,7 +113,16 @@ export function ContactForm() {
             </p>
           )}
         </div>
-        <button className="bg-blue-500 w-max mx-auto px-3 py-1 rounded-xl hover:bg-blue-400">
+        <button
+          className={clsx(
+            "bg-blue-500 w-max mx-auto px-3 py-1 rounded-xl",
+            {
+              "opacity-50 cursor-default": loading || sent,
+              "hover:bg-blue-400": !loading && !sent,
+              "bg-green-500 opacity-100": sent,
+            }
+          )}
+        >
           {loading ? (
             <ClipLoader
               className="mt-1"
