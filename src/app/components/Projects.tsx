@@ -44,7 +44,7 @@ const teamProjects = [
     function: "Group task with classmates as webdevelopers",
     period: "oct '23 - jan '24",
     description: [
-      "Helped Develop a full-stack internal communcation system for intern mentors to communicate with interns at the company.Communication happens through posts and comments on the interns timeline and progress.",
+      "Helped Develop a full-stack internal communcation system for intern mentors to communicate with interns at the company. Communication happens through posts and comments on the interns timeline and progress.",
       "Whilst mainly remaining on the front-end with React I also helped with back-end MongoDB issues.",
     ],
     link: null,
@@ -136,8 +136,8 @@ export default function Projects() {
   }, []);
   function handleSwitch(from: string, to: string) {
     const element1 = document.getElementById(from + "-projects");
-    if (to == "solo") element1?.classList.add("slide-left");
-    else element1?.classList.add("slide-right");
+    if (to == "solo") element1?.classList.add("slide-right");
+    else element1?.classList.add("slide-left");
 
     setTimeout(() => {
       setProjectSwitch(to);
@@ -163,19 +163,19 @@ export default function Projects() {
       <div className="flex gap-4 mr-auto">
         <button
           className={
-            projectSwitch == "solo" ? "font-bold border-b-2" : "text-gray-400"
-          }
-          onClick={() => handleSwitch("team", "solo")}
-        >
-          Solo Projects
-        </button>
-        <button
-          className={
             projectSwitch == "team" ? "font-bold border-b-2" : "text-gray-400"
           }
           onClick={() => handleSwitch("solo", "team")}
         >
           Team Projects
+        </button>
+        <button
+          className={
+            projectSwitch == "solo" ? "font-bold border-b-2" : "text-gray-400"
+          }
+          onClick={() => handleSwitch("team", "solo")}
+        >
+          Solo Projects
         </button>
       </div>
       <div

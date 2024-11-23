@@ -57,7 +57,7 @@ export function ContactForm() {
       id="contact"
       className="h-screen flex flex-col justify-center items-center"
     >
-      <p className="text-gray-400 text-sm">Let's make</p>
+      <p className="text-gray-400 text-sm">Let's get in</p>
       <h2 className="text-2xl font-bold">Contact</h2>
       <form
         className="flex w-full flex-col gap-4 mt-4"
@@ -102,7 +102,7 @@ export function ContactForm() {
         <div className="flex flex-col">
           <label>Message *</label>
           <textarea
-            className="bg-transparent border-2 p-2 rounded-xl"
+            className="bg-transparent border-2 p-2 rounded-xl h-48"
             name="message"
             onChange={(e) => setMessage(e.target.value)}
             value={message}
@@ -114,14 +114,11 @@ export function ContactForm() {
           )}
         </div>
         <button
-          className={clsx(
-            "bg-blue-500 w-max mx-auto px-3 py-1 rounded-xl",
-            {
-              "opacity-50 cursor-default": loading || sent,
-              "hover:bg-blue-400": !loading && !sent,
-              "bg-green-500 opacity-100": sent,
-            }
-          )}
+          className={clsx("bg-blue-500 w-max mx-auto px-3 py-1 rounded-xl", {
+            "opacity-50 cursor-default": loading,
+            "hover:bg-blue-400": !loading && !sent,
+            "bg-green-500 cursor-default": sent,
+          })}
         >
           {loading ? (
             <ClipLoader

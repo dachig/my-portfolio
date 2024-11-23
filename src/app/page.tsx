@@ -13,10 +13,10 @@ import MobileHero from "./components/MobileHero";
 export default function Home() {
   return (
     <Fragment>
-      <MobileHero/>
+      <MobileHero />
       <div className="hidden lg:block">
-        <Header />
-        <LampContainer className="">
+         <Header />
+        <LampContainer className="lg:mt-32 xl:mt-0">
           <Hero />
         </LampContainer>
         <main className="max-w-3xl mx-auto">

@@ -53,11 +53,11 @@ export default function Experience() {
               </li>
               <li className="flex items-center gap-1">
                 <MdVerified />
-                Remix
+                ThreeJS
               </li>
               <li className="flex items-center gap-1">
                 <MdVerified />
-                Tailwind
+                R3F
               </li>
             </ul>
           </div>
