@@ -6,6 +6,8 @@
   --background: #0a0a0a;
   --foreground: #ededed;
   --active-color: #ffffff;
+  overflow-y: scroll; 
+  scrollbar-width: none; 
 }
 
 body {
@@ -21,6 +23,7 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
 nav ul li a.active {
   color: var(--active-color); /* Indigo color or any color you prefer */
   font-weight: bold;
