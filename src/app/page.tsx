@@ -16,9 +16,9 @@ export default function Home() {
       <MobileHero />
       <div className="hidden lg:block">
          <Header />
-        <LampContainer className="lg:mt-32 xl:mt-0">
+        {/* <LampContainer className="lg:mt-32 xl:mt-0"> */}
           <Hero />
-        </LampContainer>
+        {/* </LampContainer> */}
         <main className="max-w-3xl mx-auto">
           <About />
           <Experience />

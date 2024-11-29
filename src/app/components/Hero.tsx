@@ -11,12 +11,15 @@ import { animateOnScroll } from "../lib/animate-on-scroll";
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    animateOnScroll(heroRef);
-  }, []);
+  // useEffect(() => {
+  //   animateOnScroll(heroRef);
+  // }, []);
 
   return (
-    <div ref={heroRef} className="flex flex-col md:flex-row justify-center items-center gap-16 hiddenn">
+    <div
+      ref={heroRef}
+      className="flex flex-col h-screen md:flex-row justify-center items-center gap-16"
+    >
       <Image
         className="rounded-full"
         src={AiAvatar}

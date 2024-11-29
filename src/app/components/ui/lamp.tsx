@@ -13,15 +13,15 @@ export const LampContainer = ({
 }) => {
   const lampRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    animateOnScroll(lampRef);
-  }, []);
+  // useEffect(() => {
+  //   animateOnScroll(lampRef);
+  // }, []);
 
   return (
     <div
       ref={lampRef}
       className={cn(
-        "relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-neutral-950 w-full rounded-md z-0 hiddenn",
+        "relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-neutral-950 w-full rounded-md z-0",
         className
       )}
     >

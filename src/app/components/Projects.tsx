@@ -131,9 +131,9 @@ export default function Projects() {
   const [projectSwitch, setProjectSwitch] = useState("team");
   const projectsRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    animateOnScroll(projectsRef);
-  }, []);
+  // useEffect(() => {
+  //   animateOnScroll(projectsRef);
+  // }, []);
   function handleSwitch(from: string, to: string) {
     const element1 = document.getElementById(from + "-projects");
     if (to == "solo") element1?.classList.add("slide-right");

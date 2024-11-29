@@ -5,15 +5,15 @@ import {animateOnScroll} from "../lib/animate-on-scroll"
 export default function About() {
   const aboutRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    animateOnScroll(aboutRef);
-  }, []);
+  // useEffect(() => {
+  //   animateOnScroll(aboutRef);
+  // }, []);
 
   return (
     <div
       ref={aboutRef}
       id="about"
-      className="hiddenn h-screen flex flex-col justify-center items-center gap-4"
+      className="h-screen flex flex-col justify-center items-center gap-4"
     >
       
       <div className="text-center">

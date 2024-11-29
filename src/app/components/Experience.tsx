@@ -6,9 +6,9 @@ import { animateOnScroll } from "../lib/animate-on-scroll";
 export default function Experience() {
   const experienceRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    animateOnScroll(experienceRef);
-  }, []);
+  // useEffect(() => {
+  //   animateOnScroll(experienceRef);
+  // }, []);
 
   return (
     <div
