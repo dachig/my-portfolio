@@ -1,17 +1,11 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { SparklesCore } from "./ui/sparkles";
-import { animateOnScroll } from "../lib/animate-on-scroll";
 
 export default function MobileHero() {
-  const mobileHeroRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    animateOnScroll(mobileHeroRef);
-  }, []);
   return (
     <div
-      ref={mobileHeroRef}
       className="h-screen relative w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md lg:hidden hiddenn"
     >
       <div className="w-full absolute inset-0 h-screen">

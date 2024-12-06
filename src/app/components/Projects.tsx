@@ -1,6 +1,10 @@
 "use client";
 import CryptoHippo from "../../../public/crypto-hippo-screen.png";
 import GithubAPI from "../../../public/github-api-screen.png";
+import HauntedHouse from "../../../public/haunted-house-screen.png";
+import MarblesRace from "../../../public/marbles-race-screen.png";
+import ChairConfigurator from "../../../public/chair-configurator-screen.png";
+
 import Image from "next/image";
 import Link from "next/link";
 import { RiExternalLinkLine } from "react-icons/ri";
@@ -24,6 +28,33 @@ const soloProjects = [
     thumbnail: GithubAPI,
     linkRepo: "https://github.com/dachig/GithubAPI",
     linkDemo: "https://github-api-omega-lime.vercel.app/",
+  },
+];
+const solo3DProjects = [
+  {
+    title: "Haunted House",
+    description:
+      "Immerse yourself in a creepy world created with Vanilla ThreeJS.",
+    thumbnail: HauntedHouse,
+    linkRepo:
+      "https://github.com/dachig/threejs-journey/tree/main/16-haunted-house",
+    linkDemo: "https://dachis-haunted-house.vercel.app/",
+  },
+  {
+    title: "Marbles Race",
+    description:
+      "Race to the finish of an obstacle course as a little purple marble.",
+    thumbnail: MarblesRace,
+    linkRepo:
+      "https://github.com/dachig/threejs-journey/tree/main/66-create-a-game-with-r3f",
+    linkDemo: "https://marblesrace.vercel.app/",
+  },
+  {
+    title: "Chair Configurator",
+    description: "Personalize your own chair in a 3D configurator.",
+    thumbnail: ChairConfigurator,
+    linkRepo: "https://github.com/dachig/3d-configurator",
+    linkDemo: "https://dachis-chair-configurator.vercel.app/",
   },
 ];
 
@@ -59,6 +90,45 @@ function SoloProjects() {
           id={`solo-project-${index}`}
           key={index}
           className="border-2 p-4 rounded-xl flex flex-col"
+        >
+          <h3 className="font-bold">{project.title}</h3>
+          <p className="text-gray-400">{project.description}</p>
+          <Image
+            height={400}
+            src={project.thumbnail}
+            alt="thumbnail project"
+            className="mt-auto"
+          />
+          <div className="flex gap-4 mt-2">
+            <Link
+              href={project.linkRepo}
+              target="_blank"
+              className="hover:text-blue-600"
+            >
+              Repository
+            </Link>
+            <Link
+              href={project.linkDemo}
+              target="_blank"
+              className="hover:text-blue-600"
+            >
+              Live Demo
+            </Link>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function Solo3DProjects() {
+  return (
+    <div className="grid gap-4 grid-cols-2">
+      {solo3DProjects.map((project, index) => (
+        <div
+          id={`solo3d-project-${index}`}
+          key={index}
+          className={"border-2 p-4 rounded-xl flex flex-col"}
         >
           <h3 className="font-bold">{project.title}</h3>
           <p className="text-gray-400">{project.description}</p>
@@ -135,9 +205,9 @@ export default function Projects() {
   //   animateOnScroll(projectsRef);
   // }, []);
   function handleSwitch(from: string, to: string) {
+    let random = Math.random();
     const element1 = document.getElementById(from + "-projects");
-    if (to == "solo") element1?.classList.add("slide-right");
-    else element1?.classList.add("slide-left");
+    element1?.classList.add(`slide-${random < 0.5 ? "right" : "left"}`);
 
     setTimeout(() => {
       setProjectSwitch(to);
@@ -147,7 +217,25 @@ export default function Projects() {
       element2?.classList.remove("hidden");
       element1?.classList.add("fade-in-bounce");
       element2?.classList.add("fade-in-bounce");
+      if (document.getElementById(to + "-project-2")) {
+        const element3 = document.getElementById(to + "-project-2");
+        element3?.classList.remove("hidden");
+        element3?.classList.add("fade-in-bounce");
+      }
     }, 500);
+
+    // if (to == "solo") element1?.classList.add("slide-right");
+    // else element1?.classList.add("slide-left");
+
+    // setTimeout(() => {
+    //   setProjectSwitch(to);
+    //   const element1 = document.getElementById(to + "-project-0");
+    //   const element2 = document.getElementById(to + "-project-1");
+    //   element1?.classList.remove("hidden");
+    //   element2?.classList.remove("hidden");
+    //   element1?.classList.add("fade-in-bounce");
+    //   element2?.classList.add("fade-in-bounce");
+    // }, 500);
   }
 
   return (
@@ -165,7 +253,7 @@ export default function Projects() {
           className={
             projectSwitch == "team" ? "font-bold border-b-2" : "text-gray-400"
           }
-          onClick={() => handleSwitch("solo", "team")}
+          onClick={() => handleSwitch(projectSwitch, "team")}
         >
           Team Projects
         </button>
@@ -173,9 +261,17 @@ export default function Projects() {
           className={
             projectSwitch == "solo" ? "font-bold border-b-2" : "text-gray-400"
           }
-          onClick={() => handleSwitch("team", "solo")}
+          onClick={() => handleSwitch(projectSwitch, "solo")}
         >
           Solo Projects
+        </button>
+        <button
+          className={
+            projectSwitch == "solo3d" ? "font-bold border-b-2" : "text-gray-400"
+          }
+          onClick={() => handleSwitch(projectSwitch, "solo3d")}
+        >
+          Solo 3D Projects
         </button>
       </div>
       <div
@@ -183,6 +279,12 @@ export default function Projects() {
         id="solo-projects"
       >
         <SoloProjects />
+      </div>
+      <div
+        className={projectSwitch === "solo3d" ? "" : "hidden"}
+        id="solo3d-projects"
+      >
+        <Solo3DProjects />
       </div>
       <div
         className={projectSwitch === "team" ? "" : "hidden"}

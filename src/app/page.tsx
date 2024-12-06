@@ -15,7 +15,7 @@ export default function Home() {
     <Fragment>
       {/* <MobileHero /> */}
       <div>
-         <Header />
+         {/* <Header /> */}
         {/* <LampContainer className="lg:mt-32 xl:mt-0"> */}
           <Hero />
         {/* </LampContainer> */}
