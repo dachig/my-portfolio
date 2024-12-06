@@ -92,7 +92,7 @@ function SoloProjects() {
           className="border-2 p-4 rounded-xl flex flex-col"
         >
           <h3 className="font-bold">{project.title}</h3>
-          <p className="text-gray-400">{project.description}</p>
+          <p className="text-gray-400 mb-3">{project.description}</p>
           <Image
             height={400}
             src={project.thumbnail}
@@ -131,9 +131,9 @@ function Solo3DProjects() {
           className={"border-2 p-4 rounded-xl flex flex-col"}
         >
           <h3 className="font-bold">{project.title}</h3>
-          <p className="text-gray-400">{project.description}</p>
+          <p className="text-gray-400 mb-3">{project.description}</p>
           <Image
-            height={400}
+            height={200}
             src={project.thumbnail}
             alt="thumbnail project"
             className="mt-auto"
@@ -223,26 +223,15 @@ export default function Projects() {
         element3?.classList.add("fade-in-bounce");
       }
     }, 500);
-
-    // if (to == "solo") element1?.classList.add("slide-right");
-    // else element1?.classList.add("slide-left");
-
-    // setTimeout(() => {
-    //   setProjectSwitch(to);
-    //   const element1 = document.getElementById(to + "-project-0");
-    //   const element2 = document.getElementById(to + "-project-1");
-    //   element1?.classList.remove("hidden");
-    //   element2?.classList.remove("hidden");
-    //   element1?.classList.add("fade-in-bounce");
-    //   element2?.classList.add("fade-in-bounce");
-    // }, 500);
   }
 
   return (
     <div
       ref={projectsRef}
       id="projects"
-      className="h-screen flex flex-col justify-center items-center gap-4 overflow-hidden"
+      className={`${
+        projectSwitch === "solo3d" ? "h-[calc(100vh+400px)]" : "h-screen"
+      } flex flex-col justify-center items-center gap-4 overflow-hidden`}
     >
       <div className="text-center">
         <p className="text-gray-400 text-sm">Take a look at my</p>
