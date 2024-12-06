@@ -13,8 +13,8 @@ import MobileHero from "./components/MobileHero";
 export default function Home() {
   return (
     <Fragment>
-      <MobileHero />
-      <div className="hidden lg:block">
+      {/* <MobileHero /> */}
+      <div>
          <Header />
         {/* <LampContainer className="lg:mt-32 xl:mt-0"> */}
           <Hero />
