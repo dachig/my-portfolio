@@ -68,7 +68,7 @@ const teamProjects = [
       "Developing Shopify custom apps in React to trigger automated ticketing printjobs on a client project.",
       "Rewriting tests for another client project.",
     ],
-    link: "https://meteorblog.vercel.app/",
+    link: "https://twintagblog.vercel.app/",
   },
   {
     who: "icapps",
