@@ -60,6 +60,17 @@ const solo3DProjects = [
 
 const teamProjects = [
   {
+    who: "Twintag",
+    function: "Intern full stack developer",
+    period: "feb '25 - june '25",
+    description: [
+      "Worked on internal admin portal and helped developed client projects.",
+      "Working with modern AI tools and agents and implementing them into projects.",
+      "Writing tests for the AI implementations.",
+    ],
+    link: "https://twintagblog.vercel.app/",
+  },
+  {
     who: "Meteor Digital NV",
     function: "Intern e-commerce front-end developer",
     period: "feb '24 - june '24",
@@ -67,16 +78,6 @@ const teamProjects = [
       "Researching Shopify's and Showpware's headless React PWA capabilities to seamlessly integrate with the respective storefronts to improve (outdated) internal workflows.",
       "Developing Shopify custom apps in React to trigger automated ticketing printjobs on a client project.",
       "Rewriting tests for another client project.",
-    ],
-    link: "https://twintagblog.vercel.app/",
-  },
-  {
-    who: "icapps",
-    function: "Group task with classmates as webdevelopers",
-    period: "oct '23 - jan '24",
-    description: [
-      "Helped Develop a full-stack internal communcation system for intern mentors to communicate with interns at the company. Communication happens through posts and comments on the interns timeline and progress.",
-      "Whilst mainly remaining on the front-end with React I also helped with back-end MongoDB issues.",
     ],
     link: null,
   },
