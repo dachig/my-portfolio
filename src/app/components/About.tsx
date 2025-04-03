@@ -24,7 +24,7 @@ export default function About() {
         <div className="flex gap-4">
           <div className="border-2 rounded-xl p-4 w-1/2">
             <h3 className="font-bold">Experience</h3>
-            <p className="text-sm">2+ years in frontend development</p>
+            <p className="text-sm">1+ year professional experience in frontend development</p>
           </div>
           <div className="border-2 rounded-xl p-4 w-1/2">
             <h3 className="font-bold">Education</h3>
@@ -33,8 +33,8 @@ export default function About() {
         </div>
         <p className="px-4">
           In addition to my passion for programming, I thrive on physical
-          challenges that engage both my body and mind. I enjoy boxing, where
-          precision and strategy blend seamlessly with physical strength.
+          challenges that engage both my body and mind. I enjoy playing chess, where
+          strategy and pattern recognition is key.
           Calisthenics allows me to push my limits and develop body control.
           Hiking offers a chance to explore nature while boosting my endurance,
           and bouldering sharpens my problem-solving skills as I navigate

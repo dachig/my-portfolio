@@ -27,11 +27,11 @@ export default function Experience() {
             <ul>
               <li className="flex items-center gap-1">
                 <MdVerified />
-                HTML
+                Tailwind
               </li>
               <li className="flex items-center gap-1">
                 <MdVerified />
-                CSS
+                SASS
               </li>
               <li className="flex items-center gap-1">
                 <MdVerified />
@@ -74,11 +74,19 @@ export default function Experience() {
                 <MdVerified />
                 PostgreSQL
               </li>
+              <li className="flex items-center gap-1">
+                <MdVerified />
+                GraphQL
+              </li>
             </ul>
             <ul>
               <li className="flex items-center gap-1">
                 <MdVerified />
-                C#
+                AI Integrations
+              </li>
+              <li className="flex items-center gap-1">
+                <MdVerified />
+                Golang
               </li>
             </ul>
           </div>

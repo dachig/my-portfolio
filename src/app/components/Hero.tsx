@@ -49,8 +49,8 @@ export default function Hero() {
           </Link>
           <a
             className="bounce3"
-            href="/CV_Dachi_Giorgobiani.docx.pdf"
-            download="CV_Dachi_Giorgobiani.docx.pdf"
+            href="/Dachi_Giorgobiani_CV_EN.pdf"
+            download="Dachi_Giorgobiani_CV_EN.pdf"
           >
             <TbFileCv className="text-2xl" />
           </a>

@@ -104,16 +104,18 @@ function SoloProjects() {
             <Link
               href={project.linkRepo}
               target="_blank"
-              className="hover:text-blue-600"
+              className="text-blue-500 hover:text-blue-600 font-bold flex items-center gap-1"
             >
               Repository
+              <RiExternalLinkLine className="font-extrabold text-lg" />
             </Link>
             <Link
               href={project.linkDemo}
               target="_blank"
-              className="hover:text-blue-600"
+              className="text-blue-500 hover:text-blue-600 font-bold flex items-center gap-1"
             >
               Live Demo
+              <RiExternalLinkLine className="font-extrabold text-lg" />
             </Link>
           </div>
         </div>
@@ -143,16 +145,18 @@ function Solo3DProjects() {
             <Link
               href={project.linkRepo}
               target="_blank"
-              className="hover:text-blue-600"
+              className="text-blue-500 hover:text-blue-600 font-bold flex gap-1 items-center"
             >
               Repository
+              <RiExternalLinkLine className="font-extrabold text-lg" />
             </Link>
             <Link
               href={project.linkDemo}
               target="_blank"
-              className="hover:text-blue-600"
+              className=" text-blue-500 hover:text-blue-600 font-bold flex gap-1 items-center"
             >
               Live Demo
+              <RiExternalLinkLine className="font-extrabold text-lg" />
             </Link>
           </div>
         </div>
@@ -187,9 +191,9 @@ function TeamProjects() {
             <Link
               href={project.link}
               target="_blank"
-              className="flex items-center gap-[3px] font-medium text-blue-600"
+              className="flex items-center gap-1 font-bold text-blue-500 hover:text-blue-600 mt-auto w-fit"
             >
-              Blog <RiExternalLinkLine />
+              Blog <RiExternalLinkLine className="font-extrabold text-lg" />
             </Link>
           )}
         </div>
